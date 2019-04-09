@@ -37,7 +37,6 @@
   },
   "skills": {
     "directory": "~/.mycroft/skills",
-    "stop_threshold": 2.0
   },
   "server": {
     "url": "https://api.mycroft.ai",
