@@ -15,7 +15,6 @@
 # limitations under the License.
 #
 from ummalqura.hijri_date import HijriDate
-from hijri_converter import convert
 from collections import namedtuple
 from datetime import datetime, timedelta,timezone
 
