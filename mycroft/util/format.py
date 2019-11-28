@@ -48,7 +48,6 @@ import datetime
 import re
 
 from ummalqura.hijri_date import HijriDate
-from hijri_converter import convert
 from mycroft.util.time import now_local
 
 def _translate_word(name, lang):
