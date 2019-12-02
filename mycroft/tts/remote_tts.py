@@ -69,7 +69,7 @@ class RemoteTTS(TTS):
     def __request(self, p):
         return self.session.get(
             self.url + self.api_path, params=self.build_request_params(p),
-            timeout=1000, verify=False, auth=self.auth)
+            timeout=30, verify=False, auth=self.auth)
 
     @abc.abstractmethod
     def build_request_params(self, sentence):
