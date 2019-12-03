@@ -321,25 +321,26 @@ class IntentService:
             # normalize() changes "it's a boy" to "it is a boy", etc.
             norm_utterances = [normalize(u.lower(), remove_articles=False)
                                for u in utterances]
+            
 
             # Build list with raw utterance(s) first, then optionally a
             # normalized version following.
             combined = utterances + list(set(norm_utterances) -
                                          set(utterances))
             LOG.debug("Utterances: {}".format(combined))
-
+            
             stopwatch = Stopwatch()
             intent = None
             padatious_intent = None
             with stopwatch:
                 # Give active skills an opportunity to handle the utterance
-                converse = self._converse(combined, lang)
+                converse = self._converse(norm_utterances, lang)
 
                 if not converse:
                     # No conversation, use intent system to handle utterance
                     intent = self._adapt_intent_match(utterances,
                                                       norm_utterances, lang)
-                    for utt in combined:
+                    for utt in norm_utterances:
                         _intent = PadatiousService.instance.calc_intent(utt)
                         if _intent:
                             best = padatious_intent.conf if padatious_intent\
