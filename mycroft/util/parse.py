@@ -326,6 +326,8 @@ def normalize(text, lang=None, remove_articles=True):
         return normalize_de(text, remove_articles)
     elif lang_code == "da":
         return normalize_da(text, remove_articles)
+    elif lang_code == "ar":
+        return normalize_ar(text, remove_articles)
     # TODO: Normalization for other languages
     _log_unsupported_language(lang_code,
                               ['en', 'es', 'pt', 'it', 'fr', 'sv', 'de', 'da'])
