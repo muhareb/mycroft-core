@@ -36,8 +36,8 @@ class KACSTTTS(RemoteTTS):
         params['voice'] = 2
         
         #params['diac']=1   # this is MADAMIRA
-        #params['diac']=2   # this is Almosallam
-        params['diac']=5   # this is Althubaity
+        params['diac']=2   # this is Almosallam
+        #params['diac']=5   # this is Althubaity
         
         params['prep'] = 1
         params['input'] = sentence.encode('utf-8')
